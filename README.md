@@ -4,7 +4,10 @@ Data Ingestion Service (DIS)
 High-level Functional Requirements:
 
 * Simulate customer onboarding. Mimic customer sign-up by pulling random datasets from Kaggle.com at a random instance once per day.
-* Oauth 2.0 for customers signing up
+* Set up K8s and helm to read secrets
+* ETL data using Apache spark
+* Data normalization and transformation
+* Stream data as events to DSS using Flink
 
 Non-Functional Requirements:
 
