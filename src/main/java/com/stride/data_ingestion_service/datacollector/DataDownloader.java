@@ -1,5 +1,6 @@
 package com.stride.data_ingestion_service.datacollector;
 
+import org.springframework.core.task.TaskExecutor;
 import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
@@ -12,10 +13,10 @@ public class DataDownloader {
     private static final long FIXED_RATE = 12 * 60 * 60 * 1000; // Runs every 12 hours
 
 
-    public void runScript() {
+    public static void runScript() {
         try {
             // Replace with the actual path to your Python script
-            String[] command = {"python", "/path/to/your/script.py"};
+            String[] command = {"python3", "/Users/pinaksawhney/Desktop/Project/data-ingestion-service/src/main/script/downloader.py"};
             ProcessBuilder processBuilder = new ProcessBuilder(command);
 
             Process process = processBuilder.start();
@@ -33,5 +34,9 @@ public class DataDownloader {
         } catch (InterruptedException | IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void main(String[] args) {
+        runScript();
     }
 }
