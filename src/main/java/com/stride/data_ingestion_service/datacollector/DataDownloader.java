@@ -1,6 +1,5 @@
 package com.stride.data_ingestion_service.datacollector;
 
-import org.springframework.core.task.TaskExecutor;
 import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
@@ -34,9 +33,5 @@ public class DataDownloader {
         } catch (InterruptedException | IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public static void main(String[] args) {
-        runScript();
     }
 }
