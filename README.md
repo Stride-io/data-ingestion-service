@@ -16,3 +16,7 @@ Non-Functional Requirements:
 * Eventually consistent
 * Scalable - for different datasets and customers
 * Maintainable
+
+
+Run:
+    docker-compose -f devops/docker-compose/docker-compose.yml up --build
