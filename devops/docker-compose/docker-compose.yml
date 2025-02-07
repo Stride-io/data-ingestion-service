@@ -4,6 +4,9 @@ services:
     build: ../..
     ports:
       - "8080:8080"
+    environment:
+      KAGGLE_USERNAME: your_kaggle_username
+      KAGGLE_KEY: your_kaggle_api_key
     #environment:
     #   - SPRING_PROFILES_ACTIVE=production
     #deploy:
