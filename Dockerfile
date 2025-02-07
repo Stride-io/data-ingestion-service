@@ -22,7 +22,14 @@ RUN ./gradlew clean build --no-daemon
 # Stage 2: Create the final image
 FROM amazoncorretto:17.0.11-alpine
 
+# Install Python 3 and pip
+RUN apk add --no-cache python3 py3-pip
+
 WORKDIR /app
+
+COPY src/main/script /app/script
+
+RUN pip3 install --no-cache-dir -r /app/script/requirements.txt --break-system-packages
 
 # Copy the built JAR file from the build stage
 COPY --from=build /home/gradle/src/build/libs/*.jar /app/data-ingestion-service.jar

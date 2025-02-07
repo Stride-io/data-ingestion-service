@@ -7,16 +7,15 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 @Component
-public class DataDownloader {
+public class DataDownloader implements Runnable {
 
-    private static final long FIXED_RATE = 12 * 60 * 60 * 1000; // Runs every 12 hours
-
-
-    public static void runScript() {
+    @Override
+    public void run() {
         try {
             // Replace with the actual path to your Python script
-            String[] command = {"python3", "/Users/pinaksawhney/Desktop/Project/data-ingestion-service/src/main/script/downloader.py"};
+            String[] command = {"python3", "/app/script/downloader.py"};
             ProcessBuilder processBuilder = new ProcessBuilder(command);
+            processBuilder.redirectErrorStream(true);
 
             Process process = processBuilder.start();
 

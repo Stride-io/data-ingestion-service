@@ -1,12 +1,6 @@
-import os
 import requests
 import kaggle
 import random
-
-
-os.environ['KAGGLE_USERNAME'] = "" #toDo - get from deployment
-os.environ['KAGGLE_KEY'] = "" #toDo - get from deployment
-
 
 def get_priority(search_result):
     metadata = vars(search_result)
