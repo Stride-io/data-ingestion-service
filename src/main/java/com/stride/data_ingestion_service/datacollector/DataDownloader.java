@@ -6,14 +6,17 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import static common.Constants.PYTHON3;
+
 @Component
 public class DataDownloader implements Runnable {
+    private static final String SCRIPT_PATH = "/app/script/downloader.py";
 
     @Override
     public void run() {
         try {
             // Replace with the actual path to your Python script
-            String[] command = {"python3", "/app/script/downloader.py"};
+            String[] command = { PYTHON3, SCRIPT_PATH };
             ProcessBuilder processBuilder = new ProcessBuilder(command);
             processBuilder.redirectErrorStream(true);
 
